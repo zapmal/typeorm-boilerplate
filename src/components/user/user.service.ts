@@ -1,5 +1,5 @@
 import { getRepository } from 'typeorm';
-import { User } from '../../database/entity/User';
+import { User } from '@entities/User';
 
 const getSingleUser = async (userID: number) => {
   const user = await getRepository(User).findOne(userID);

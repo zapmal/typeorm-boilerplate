@@ -8,13 +8,13 @@
    "synchronize": true,
    "logging": false,
    "entities": [
-      "{build,src}/database/entity/**/*{.js,.ts}"
+      "{build,src}/database/entities/**/*{.js,.ts}"
    ],
    "migrations": [
-      "{build,src}/database/migration/**/*{.js,.ts}"
+      "{build,src}/database/migrations/**/*{.js,.ts}"
    ],
    "cli": {
-      "entitiesDir": "src/database/entity",
-      "migrationsDir": "src/database/migration"
+      "entitiesDir": "src/database/entities",
+      "migrationsDir": "src/database/migrations"
    }
 }

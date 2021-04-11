@@ -1,8 +1,9 @@
 import express from 'express';
-import 'reflect-metadata';
 import { createConnection } from 'typeorm';
+import 'reflect-metadata';
+import 'module-alias/register';
 
-import userRoutes from './components/user';
+import userRoutes from '@components/user';
 
 const app = express();
 const PORT = process.env.PORT || 4000;

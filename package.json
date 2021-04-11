@@ -7,6 +7,8 @@
       "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/app.ts",
       "watch": "tsc -w",
       "build": "tsc",
+      "migrate": "npx typeorm migration:run",
+      "undo:migrations": "npx typeorm migration:revert",
       "start": "ts-node src/app.ts"
    },
    "devDependencies": {
@@ -18,8 +20,13 @@
    },
    "dependencies": {
       "express": "^4.17.1",
+      "module-alias": "^2.2.2",
       "mysql2": "^2.2.5",
       "reflect-metadata": "^0.1.10",
       "typeorm": "0.2.31"
+   },
+   "_moduleAliases": {
+      "@entities": "build/database/entities",
+      "@components": "build/components"
    }
 }
