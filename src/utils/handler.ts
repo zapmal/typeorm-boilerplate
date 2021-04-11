@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 
 const handler = <T>(
-  promise: (params?: any) => Promise<Object>,
+  promise: (...params: any) => Promise<Object>,
   params: (req?: Request, res?: Response, next?: NextFunction) => T[] 
 ) => async (
   request: Request, 

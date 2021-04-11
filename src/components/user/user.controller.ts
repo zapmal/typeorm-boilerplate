@@ -1,3 +1,4 @@
+import { Response } from 'express';
 import { 
   getSingleUser,
   getAllUsers,
@@ -5,20 +6,22 @@ import {
   deleteSingleUser,
 } from './user.service';
 
-const getUser = async (userID: number) => {
+const getUser = async (userID: number, response: Response) => {
   const user = await getSingleUser(userID);
 
   if (!user) {
+    response.status(404);
     return { message: 'User not found.' };
   }
 
   return user;
 };
 
-const getUsers = async () => {
+const getUsers = async (response: Response) => {
   const users = await getAllUsers();
 
   if (!users) {
+    response.status(404);
     return { message: 'No users to display.' };
   }
 
@@ -31,10 +34,11 @@ const postUser = async (user: Object) => {
   return newUser;
 };
 
-const deleteUser = async (userID: number) => {
+const deleteUser = async (userID: number, response: Response) => {
   const userExists = await getSingleUser(userID);
 
   if (!userExists) {
+    response.status(404);
     return { message: 'User not found.'};
   }
 

@@ -18,7 +18,7 @@ router.get(`${ROUTE_PREFIX}/:id`,
 );
 
 router.get(`${ROUTE_PREFIX}`,
-  handler(getUsers, () => []),
+  handler(getUsers, (_, response) => [response]),
 );
 
 router.post(`${ROUTE_PREFIX}`,
@@ -28,8 +28,8 @@ router.post(`${ROUTE_PREFIX}`,
 );
 
 router.delete(`${ROUTE_PREFIX}/:id`,
-  handler(deleteUser, (request) => (
-    [request?.params.id]
+  handler(deleteUser, (request, response) => (
+    [request?.params.id, response]
   )),
 );
 
