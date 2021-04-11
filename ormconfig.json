@@ -4,7 +4,7 @@
    "port": 3306,
    "username": "username",
    "password": "password",
-   "database": "typeorm_rest",
+   "database": "my_rest_api",
    "synchronize": true,
    "logging": false,
    "entities": [
