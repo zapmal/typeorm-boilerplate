@@ -1,9 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
 
 const handler = (
-  // promise: (parameters) => Promise<Object>,
-  promise: any,
-  params: (req?: Request, res?: Response, next?: NextFunction) => any[]
+  promise: (params?: any) => Promise<Object>,
+  params: (req?: Request, res?: Response, next?: NextFunction) => any[] 
 ) => async (
   request: Request, 
   response: Response, 
