@@ -1,4 +1,3 @@
-import { Response } from 'express';
 import { 
   getSingleUser,
   getAllUsers,
@@ -16,7 +15,7 @@ const getUser = async (userID: number) => {
   return user;
 };
 
-const getUsers = async (response: Response) => {
+const getUsers = async () => {
   const users = await getAllUsers();
 
   if (!users) {

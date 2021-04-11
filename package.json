@@ -4,12 +4,12 @@
    "main": "src/index.ts",
    "license": "MIT",
    "scripts": {
-      "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/app.ts",
+      "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/server.ts",
       "watch": "tsc -w",
       "build": "tsc",
       "migrate": "npx typeorm migration:run",
       "undo:migrations": "npx typeorm migration:revert",
-      "start": "ts-node src/app.ts"
+      "start": "ts-node src/server.ts"
    },
    "devDependencies": {
       "@types/express": "^4.17.11",
@@ -27,6 +27,7 @@
    },
    "_moduleAliases": {
       "@entities": "build/database/entities",
-      "@components": "build/components"
+      "@components": "build/components",
+      "@utils": "build/utils"
    }
 }

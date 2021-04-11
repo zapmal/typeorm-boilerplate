@@ -6,7 +6,7 @@ import {
   postUser, 
   deleteUser, 
 } from './user.controller';
-import handler from '../../utils/handler';
+import handler from '@utils/handler';
 
 const router = Router();
 const ROUTE_PREFIX = '/users';
@@ -18,19 +18,17 @@ router.get(`${ROUTE_PREFIX}/:id`,
 );
 
 router.get(`${ROUTE_PREFIX}`,
-  handler(getUsers, (_, response) => (
-    [response]
-  )),
+  handler(getUsers, () => []),
 );
 
 router.post(`${ROUTE_PREFIX}`,
-  handler(postUser, (request, response) => (
+  handler(postUser, (request) => (
     [request?.body]
   )),
 );
 
 router.delete(`${ROUTE_PREFIX}/:id`,
-  handler(deleteUser, (request, response) => (
+  handler(deleteUser, (request) => (
     [request?.params.id]
   )),
 );
