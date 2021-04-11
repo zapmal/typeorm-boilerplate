@@ -1,0 +1,20 @@
+{
+   "type": "mysql",
+   "host": "localhost",
+   "port": 3306,
+   "username": "manuel",
+   "password": "sudopassword",
+   "database": "typeorm_rest",
+   "synchronize": true,
+   "logging": false,
+   "entities": [
+      "{build,src}/entity/**/*{.js,.ts}"
+   ],
+   "migrations": [
+      "{build,src}/migration/**/*{.js,.ts}"
+   ],
+   "cli": {
+      "entitiesDir": "src/entity",
+      "migrationsDir": "src/migration"
+   }
+}
