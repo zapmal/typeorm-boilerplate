@@ -4,7 +4,7 @@ import {
   getAllUsers,
   createUser,
   deleteSingleUser,
-} from './user.service';
+} from './userService';
 
 const getUser = async (userID: number, response: Response) => {
   const user = await getSingleUser(userID);

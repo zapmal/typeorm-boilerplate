@@ -5,7 +5,7 @@ import {
   getUsers, 
   postUser, 
   deleteUser, 
-} from './user.controller';
+} from './userController';
 import handler from '@utils/handler';
 
 const router = Router();
